@@ -1,0 +1,13 @@
+<h2>All Posts</h2>
+<% @posts.each do |post| %>
+  <div>
+    <%= post.body %>
+    <%= post.created_at %>
+  </div>
+<% end %>
+
+<h2>Add Post</h2>
+<%= form_with model: @post do |f| %>
+  <%= f.text_field :body %>
+  <%= f.submit "Save" %>
+<% end %>
