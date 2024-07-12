@@ -5,8 +5,10 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
+      - bundle:/app/vendor/bundle
     environment:
-      - BINDING=0.0.0.0
+      BINDING: "0.0.0.0"
+      BUNDLE_PATH: "/app/vendor/bundle"
     depends_on:
       - db
     tty: true
@@ -20,4 +22,5 @@ services:
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
 volumes:
+  bundle:
   db:
