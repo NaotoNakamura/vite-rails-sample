@@ -3,12 +3,14 @@ services:
     build: .
     ports:
       - "3000:3000"
+      - "3036:3036"
     volumes:
       - .:/app
       - bundle:/app/vendor/bundle
     environment:
       BINDING: "0.0.0.0"
       BUNDLE_PATH: "/app/vendor/bundle"
+      VITE_RUBY_HOST: "0.0.0.0"
     depends_on:
       - db
     tty: true
