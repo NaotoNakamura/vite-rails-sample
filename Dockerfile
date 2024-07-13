@@ -13,3 +13,7 @@ RUN apt-get update -qq && \
     curl \
     libjemalloc2 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+ARG NODE_VERSION=20
+RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
+    && apt-get install -y nodejs
