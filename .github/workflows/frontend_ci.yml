@@ -1,0 +1,19 @@
+name: FrontEnd CI
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install npm
+        run: npm ci
+
+      - name: ESLint
+        run: npm run lint
