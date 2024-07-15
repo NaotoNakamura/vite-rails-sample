@@ -6,7 +6,7 @@
     "eslint-plugin-vue": "^9.27.0",
     "globals": "^15.8.0",
     "prettier": "3.3.3",
-    "typescript-eslint": "^8.0.0-alpha.10",
+    "typescript-eslint": "^8.0.0-alpha.44",
     "vite": "^5.3.3",
     "vite-plugin-ruby": "^5.0.0"
   },
