@@ -4,6 +4,7 @@ on:
   pull_request:
     paths: ['app/frontend/**/*.{js,ts,vue}']
   push:
+    paths: ['app/frontend/**/*.{js,ts,vue}']
     branches: [ main ]
 
 jobs:
