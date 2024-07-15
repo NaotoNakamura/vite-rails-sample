@@ -27,6 +27,7 @@
   </head>
 
   <body>
+    <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
     <%= yield %>
   </body>
 </html>
