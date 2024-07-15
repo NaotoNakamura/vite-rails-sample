@@ -2,6 +2,7 @@ name: FrontEnd CI
 
 on:
   pull_request:
+    paths: ['app/frontend/**/*.{js,ts,vue}']
   push:
     branches: [ main ]
 
