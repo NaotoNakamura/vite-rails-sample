@@ -4,7 +4,7 @@
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.27.0",
-    "globals": "^15.8.0",
+    "globals": "^15.9.0",
     "prettier": "3.3.3",
     "typescript-eslint": "^8.0.0-alpha.44",
     "vite": "^5.3.4",
