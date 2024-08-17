@@ -2,7 +2,10 @@ name: FrontEnd CI
 
 on:
   pull_request:
-    paths: ['app/frontend/**/*.{js,ts,vue}']
+    paths: 
+      - 'app/frontend/**/*.{js,ts,vue}'
+      - 'package.json'
+      - 'package-lock.json'
   push:
     paths: ['app/frontend/**/*.{js,ts,vue}']
     branches: [ main ]
