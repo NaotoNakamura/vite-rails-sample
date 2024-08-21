@@ -2,12 +2,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [ :index ]
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user)
     @post = Post.new
   end
 
   def create
-    Post.create! post_params
+    current_user.posts.create! post_params
     redirect_to root_path
   end
 
