@@ -1,6 +1,7 @@
 <h2>All Posts</h2>
 <% @posts.each do |post| %>
   <div>
+    <%= post.user.name %>
     <%= post.body %>
     <%= post.created_at %>
   </div>
