@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "@eslint/js": "^9.9.1",
-    "eslint": "^9.9.1",
+    "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.27.0",
     "globals": "^15.9.0",
