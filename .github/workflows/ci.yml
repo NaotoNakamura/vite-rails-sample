@@ -69,7 +69,7 @@ jobs:
 
       - name: Set up the database
         run: |
-          cp config/database.yml.ci config/database.yml
+          cp config/database.ci.yml config/database.yml
           bin/rails db:test:prepare
 
       - name: Run RSpec
