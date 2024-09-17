@@ -45,7 +45,8 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
+          POSTGRES_DB: app_test
+          PGHOST: localhost
         ports:
           - 5432:5432
         options: >-
