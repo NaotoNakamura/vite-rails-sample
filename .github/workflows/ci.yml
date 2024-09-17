@@ -55,25 +55,25 @@ jobs:
           --health-retries 5
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: .ruby-version
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
 
-    - name: Install dependencies
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
 
-    - name: Set up the database
-      env:
-        RAILS_ENV: test
-      run: |
-        bin/rails db:test:prepare
+      - name: Set up the database
+        env:
+          RAILS_ENV: test
+        run: |
+          bin/rails db:test:prepare
 
-    - name: Run RSpec
-      run: |
-        bundle exec rspec
+      - name: Run RSpec
+        run: |
+          bundle exec rspec
