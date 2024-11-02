@@ -1,18 +1,26 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [ :index ]
+  before_action :set_posts, only: %i[ index create ]
 
   def index
-    @posts = Post.includes(:user)
     @post = Post.new
   end
 
   def create
-    current_user.posts.create! post_params
-    redirect_to root_path
+    @post = current_user.posts.new post_params
+    if @post.save
+      redirect_to root_path
+    else
+      render :index
+    end
   end
 
   private
     def post_params
       params.require(:post).permit(:body)
+    end
+
+    def set_posts
+      @posts = Post.includes(:user)
     end
 end
