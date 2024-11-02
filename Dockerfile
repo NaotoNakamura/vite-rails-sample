@@ -16,4 +16,4 @@ RUN apt-get update -qq && \
 
 ARG NODE_VERSION=20
 RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
-    && apt-get install -y nodejs
+    && apt-get install -y nodejs && npx playwright install --with-deps

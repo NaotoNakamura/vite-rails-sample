@@ -9,6 +9,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  RAILS_ENV: test
+  DATABASE_HOST: localhost
+
 jobs:
   scan_ruby:
     runs-on: ubuntu-latest
@@ -69,14 +73,16 @@ jobs:
       - name: Install npm
         run: npm ci
 
+      - name: Install Playwright and dependencies
+        run: |
+          npx playwright install --with-deps
+
       - name: Install dependencies
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
 
       - name: Set up the database
-        env:
-          RAILS_ENV: test
         run: |
           bin/rails db:test:prepare
 
