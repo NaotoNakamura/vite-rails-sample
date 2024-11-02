@@ -7,8 +7,15 @@ on:
       - 'package.json'
       - 'package-lock.json'
   push:
-    paths: ['app/frontend/**/*.{js,ts,vue}']
+    paths: 
+      - 'app/frontend/**/*.{js,ts,vue}'
+      - 'package.json'
+      - 'package-lock.json'
     branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   lint:
