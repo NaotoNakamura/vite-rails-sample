@@ -1,11 +1,9 @@
+<%= vite_javascript_tag 'entrypoints/posts/index' %>
+
 <h2>All Posts</h2>
-<% @posts.each do |post| %>
-  <div>
-    <%= post.user.name %>
-    <%= post.body %>
-    <%= post.created_at %>
-  </div>
-<% end %>
+<div id="app">
+  <index-page :posts=<%= @posts.to_json %> />
+</div>
 
 <% if user_signed_in? %>
   <h2>Add Post</h2>
