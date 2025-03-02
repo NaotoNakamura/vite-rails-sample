@@ -48,6 +48,10 @@ RSpec.configure do |config|
     driven_by :playwright
   end
 
+  config.before(:each, type: :request) do
+    system 'npm run build'
+  end
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin

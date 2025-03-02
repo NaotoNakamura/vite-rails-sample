@@ -13,6 +13,7 @@
     "vite-plugin-ruby": "^5.1.1"
   },
   "scripts": {
+    "build": "rm -rf public/vite/assets && vite build",
     "lint": "eslint app/frontend/",
     "format": "prettier --write 'app/frontend/'"
   }
