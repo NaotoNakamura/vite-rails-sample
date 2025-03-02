@@ -21,6 +21,6 @@ class PostsController < ApplicationController
     end
 
     def set_posts
-      @posts = Post.includes(:user)
+      @posts = Post.select("posts.id, posts.body, posts.created_at, users.name AS user_name").joins(:user)
     end
 end
