@@ -9,7 +9,7 @@
     "globals": "^16.0.0",
     "prettier": "3.5.3",
     "typescript-eslint": "^8.26.1",
-    "vite": "^6.2.1",
+    "vite": "^6.2.2",
     "vite-plugin-ruby": "^5.1.1"
   },
   "scripts": {
