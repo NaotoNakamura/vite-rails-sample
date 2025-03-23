@@ -1,17 +1,2 @@
-<%= vite_javascript_tag 'entrypoints/posts/index' %>
-
 <h2>All Posts</h2>
-<div id="app">
-  <index-page :posts=<%= @posts.to_json %> />
-</div>
 
-<% if user_signed_in? %>
-  <h2>Add Post</h2>
-  <% @post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  <%= form_with model: @post do |f| %>
-    <%= f.text_area :body %>
-    <%= f.submit "Save" %>
-  <% end %>
-<% end %>

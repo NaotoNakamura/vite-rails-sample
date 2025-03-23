@@ -1,4 +1,12 @@
 <header>
   <nav>
+    <% if current_user %>
+      <p>LoginUser：<%= current_user.email %></p>
+      <%= button_to 'Logout', logout_path, method: :post %>
+    <% else %>
+      <a href="/auth/google_oauth2">
+        <span>Login with Google</span>
+      </a>
+    <% end %>
   </nav>
 </header>
