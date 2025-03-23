@@ -1,7 +1,7 @@
 <header>
   <nav>
     <% if current_user %>
-      <p>LoginUser：<%= current_user.email %></p>
+      <p>LoginUser：<%= current_user.name %></p>
       <%= button_to 'Logout', logout_path, method: :post %>
     <% else %>
       <a href="/auth/google_oauth2">

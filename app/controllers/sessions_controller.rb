@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
   def find_or_create_from_auth_hash(auth_hash)
     email = auth_hash['info']['email']
     name = auth_hash['info']['name']
-    User.find_or_create_by(email: email)
+    User.find_or_create_by(email: email, name: name)
   end
 end
