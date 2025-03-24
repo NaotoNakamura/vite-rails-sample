@@ -16,12 +16,12 @@ class SessionsController < ApplicationController
   private
 
   def auth_hash
-    request.env['omniauth.auth']
+    request.env["omniauth.auth"]
   end
 
   def find_or_create_from_auth_hash(auth_hash)
-    email = auth_hash['info']['email']
-    name = auth_hash['info']['name']
+    email = auth_hash["info"]["email"]
+    name = auth_hash["info"]["name"]
     User.find_or_create_by(email: email, name: name)
   end
 end

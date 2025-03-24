@@ -69,7 +69,7 @@ RSpec.configure do |config|
     uid: '123456789',
     info: {
       name: 'mockuser',
-      email: 'example@example.com',
-    },
+      email: 'example@example.com'
+    }
   })
 end
