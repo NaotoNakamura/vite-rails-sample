@@ -1,11 +1,12 @@
 <header>
   <nav>
-    <% if user_signed_in? %>
-      <ul><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></ul>
-      <ul><%= button_to "ユーザー編集", edit_user_registration_path, method: :get %></ul>
+    <% if current_user %>
+      <p>LoginUser：<%= current_user.name %></p>
+      <%= button_to 'Logout', logout_path, method: :post %>
     <% else %>
-      <ul><%= button_to "新規登録", new_user_registration_path, method: :get %></ul>
-      <ul><%= button_to "ログイン", new_user_session_path, method: :get %></ul>
+      <a href="/auth/google_oauth2">
+        <span>Login with Google</span>
+      </a>
     <% end %>
   </nav>
 </header>
