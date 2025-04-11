@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@eslint/js": "^9.23.0",
+    "@eslint/js": "^9.24.0",
     "@playwright/test": "^1.51.1",
     "@vitejs/plugin-vue": "^5.2.3",
     "eslint": "^9.23.0",
