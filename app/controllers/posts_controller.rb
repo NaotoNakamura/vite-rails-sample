@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [ :index ]
   before_action :set_posts, only: %i[ index create ]
+  skip_before_action :require_login, only: %i[ index ]
 
   def index
     @post = Post.new

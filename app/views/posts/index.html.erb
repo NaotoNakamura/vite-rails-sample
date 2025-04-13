@@ -5,7 +5,7 @@
   <index-page :posts=<%= @posts.to_json %> />
 </div>
 
-<% if user_signed_in? %>
+<% if current_user %>
   <h2>Add Post</h2>
   <% @post.errors.full_messages.each do |message| %>
       <li><%= message %></li>
