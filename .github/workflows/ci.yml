@@ -82,10 +82,9 @@ jobs:
           gem install bundler
           bundle install --jobs 4 --retry 3
 
-      - name: Set up the database
-        run: |
-          bin/rails db:test:prepare
-
       - name: Run RSpec
         run: |
+          bin/rails db:test:prepare
           bundle exec rspec
+        env:
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}

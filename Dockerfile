@@ -11,6 +11,7 @@ RUN apt-get update -qq && \
     libpq-dev \
     pkg-config \
     curl \
+    vim-tiny \
     libjemalloc2 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
